@@ -1,0 +1,46 @@
+{
+  // 禁用 Prettier 自动格式化
+  "prettier.enable": false,
+  // 禁用 JSON 自动格式化
+  "json.format.enable": false,
+  // 配置 ESLint 支持多种文件类型
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "svg"
+  ],
+  // 配置代码保存时的自动操作
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never",
+    "source.fixAll.eslint": "explicit"
+  },
+  // 配置文件排除
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": false
+  },
+  // 配置 Spell Checker 忽略的单词
+  "cSpell.words": [
+    "jannajs",
+    "recaptcha",
+    "vite",
+    "vitest"
+  ],
+  // 配置 JavaScript 导入模块规范
+  "javascript.preferences.importModuleSpecifier": "relative",
+  // 配置 TypeScript 导入模块规范
+  "typescript.preferences.importModuleSpecifier": "relative"
+}
