@@ -1,8 +1,9 @@
-import { useMemoizedFn } from 'ahooks'
+import { useMemoizedFn, useUnmount } from 'ahooks'
 import { useRef } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ReCAPTCHA } from 'react-google-recaptcha'
 
+import type { Root } from 'react-dom/client'
 import type { ReCAPTCHAProps } from 'react-google-recaptcha'
 
 import { listenRecaptchaClose } from './helpers'
@@ -14,30 +15,40 @@ export function useRecaptcha(props: ReCAPTCHAProps) {
 
   const reCaptchaRef = useRef<ReCAPTCHA>(null)
   const reCaptchaLoadedRef = useRef<ReCaptchaLoaded>('init')
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const rootRef = useRef<Root | null>(null)
 
   const onLoad = useMemoizedFn(() => {
     reCaptchaLoadedRef.current = 'loaded'
-    window.recaptchaOptions = {
-      useRecaptchaNet: true,
-    }
     asyncScriptOnLoad?.()
   })
 
   const init = useMemoizedFn(() => {
-    if (reCaptchaLoadedRef.current === 'init') {
-      reCaptchaLoadedRef.current = 'loading'
-      const root = createRoot(document.body)
-      root.render(
-        <ReCAPTCHA
-          size='invisible'
-          isolated
-          {...reset}
-          sitekey={sitekey}
-          ref={reCaptchaRef}
-          asyncScriptOnLoad={onLoad}
-        />,
-      )
+    if (typeof window === 'undefined') {
+      return
     }
+    if (reCaptchaLoadedRef.current !== 'init') {
+      return
+    }
+    window.recaptchaOptions = {
+      useRecaptchaNet: true,
+    }
+    reCaptchaLoadedRef.current = 'loading'
+    const container = document.createElement('div')
+    container.style.position = 'fixed'
+    containerRef.current = container
+    document.body.appendChild(containerRef.current)
+    const rootRef = createRoot(containerRef.current)
+    rootRef.render(
+      <ReCAPTCHA
+        size='invisible'
+        isolated
+        {...reset}
+        sitekey={sitekey}
+        ref={reCaptchaRef}
+        asyncScriptOnLoad={onLoad}
+      />,
+    )
   })
 
   const executeAsync = useMemoizedFn(async () => {
@@ -52,6 +63,18 @@ export function useRecaptcha(props: ReCAPTCHAProps) {
       reCaptchaRef.current.reset()
     }
     return token || ''
+  })
+
+  useUnmount(() => {
+    reCaptchaLoadedRef.current = 'init'
+    if (rootRef.current) {
+      rootRef.current.unmount()
+      rootRef.current = null
+    }
+    if (containerRef.current) {
+      document.body.removeChild(containerRef.current)
+      containerRef.current = null
+    }
   })
 
   return {
