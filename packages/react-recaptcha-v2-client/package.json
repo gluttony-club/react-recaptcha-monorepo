@@ -6,7 +6,16 @@
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "src"
@@ -15,7 +24,16 @@
     "dev": "vite build --config vite.lib.config.ts --watch",
     "build": "tsc && vite build --config vite.lib.config.ts"
   },
+  "dependencies": {
+    "ahooks": "^3.9.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-google-recaptcha": "^3.1.0"
+  },
   "devDependencies": {
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
+    "@types/react-google-recaptcha": "^2.1.9",
     "vite": "catalog:",
     "vite-plugin-dts": "catalog:"
   }
