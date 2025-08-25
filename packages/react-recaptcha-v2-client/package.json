@@ -1,0 +1,22 @@
+{
+  "name": "@react-recaptcha/v2-client",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "vite build --config vite.lib.config.ts --watch",
+    "build": "tsc && vite build --config vite.lib.config.ts"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
+  }
+}
