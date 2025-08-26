@@ -19,6 +19,10 @@
     "dist",
     "src"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "dev": "vite build --config vite.lib.config.ts --watch",
     "build": "tsc && vite build --config vite.lib.config.ts"
