@@ -1,5 +1,5 @@
 ---
-"react-recaptcha-v2-web": major
+"react-recaptcha-v2-web": minor
 ---
 
 md log
