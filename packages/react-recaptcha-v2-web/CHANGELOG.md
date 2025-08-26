@@ -1,5 +1,11 @@
 # react-recaptcha-v2-web
 
+## 0.1.3
+
+### Patch Changes
+
+- 303a444: add repository url
+
 ## 0.1.2
 
 ### Patch Changes
