@@ -14,7 +14,23 @@
   "bugs": {
     "url": "https://github.com/gluttony-club/react-recaptcha-monorepo/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "recaptcha",
+    "reCAPTCHA",
+    "google",
+    "google recaptcha",
+    "invisible recaptcha",
+    "recaptcha v2",
+    "captcha",
+    "bot protection",
+    "spam protection",
+    "react hook",
+    "hooks",
+    "react-google-recaptcha",
+    "typescript",
+    "web"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
