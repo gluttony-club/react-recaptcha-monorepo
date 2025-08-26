@@ -6,7 +6,7 @@ interface VerifyRecaptchaProps {
   secretKey: string
 }
 
-async function verifyRecaptcha(props: VerifyRecaptchaProps) {
+export async function verifyRecaptcha(props: VerifyRecaptchaProps) {
   const { token, secretKey } = props
 
   if (!secretKey || !token) {
@@ -30,5 +30,3 @@ async function verifyRecaptcha(props: VerifyRecaptchaProps) {
   const result = await response.json() as { success: boolean }
   return result.success
 }
-
-export default verifyRecaptcha
