@@ -5,6 +5,15 @@
   "description": "",
   "author": "",
   "license": "ISC",
+  "homepage": "https://github.com/gluttony-club/react-recaptcha-monorepo/tree/main/packages/react-recaptcha-v2-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gluttony-club/react-recaptcha-monorepo.git",
+    "directory": "packages/react-recaptcha-v2-web"
+  },
+  "bugs": {
+    "url": "https://github.com/gluttony-club/react-recaptcha-monorepo/issues"
+  },
   "keywords": [],
   "exports": {
     ".": {
