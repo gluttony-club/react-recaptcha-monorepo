@@ -2,8 +2,8 @@
   "name": "react-recaptcha-v2-web",
   "type": "module",
   "version": "0.1.4",
-  "description": "",
-  "author": "",
+  "description": "React hook for invisible Google reCAPTCHA v2",
+  "author": "614360117@qq.com",
   "license": "ISC",
   "homepage": "https://github.com/gluttony-club/react-recaptcha-monorepo/tree/main/packages/react-recaptcha-v2-web#readme",
   "repository": {
