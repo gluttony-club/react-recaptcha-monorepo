@@ -1,7 +1,7 @@
 import { useMemoizedFn, useUnmount } from 'ahooks'
 import { useRef } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ReCAPTCHA } from 'react-google-recaptcha'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import type { Root } from 'react-dom/client'
 import type { ReCAPTCHAProps } from 'react-google-recaptcha'
@@ -38,8 +38,9 @@ export function useRecaptcha(props: ReCAPTCHAProps) {
     container.style.position = 'fixed'
     containerRef.current = container
     document.body.appendChild(containerRef.current)
-    const rootRef = createRoot(containerRef.current)
-    rootRef.render(
+    const root = createRoot(containerRef.current)
+    rootRef.current = root
+    rootRef.current.render(
       <ReCAPTCHA
         size='invisible'
         isolated
