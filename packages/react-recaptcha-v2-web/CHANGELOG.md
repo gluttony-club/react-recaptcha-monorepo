@@ -1,5 +1,11 @@
 # react-recaptcha-v2-web
 
+## 0.1.2
+
+### Patch Changes
+
+- 36467b9: fix: REMADE.md to README.md
+
 ## 0.1.1
 
 ### Patch Changes
