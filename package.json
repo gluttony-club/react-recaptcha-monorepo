@@ -1,7 +1,7 @@
 {
   "name": "react-recaptcha-monorepo",
   "version": "0.0.0",
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.10.0",
   "license": "MIT",
   "files": [
     "bin",

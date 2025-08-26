@@ -1,7 +1,7 @@
 {
   "name": "react-recaptcha-v2-client",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "",
   "author": "",
   "license": "ISC",
@@ -19,10 +19,6 @@
     "dist",
     "src"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
   "scripts": {
     "dev": "vite build --config vite.lib.config.ts --watch",
     "build": "tsc && vite build --config vite.lib.config.ts"
