@@ -1,5 +1,11 @@
 # react-recaptcha-v2-web
 
+## 0.1.4
+
+### Patch Changes
+
+- 0f93204: add keywords
+
 ## 0.1.3
 
 ### Patch Changes
