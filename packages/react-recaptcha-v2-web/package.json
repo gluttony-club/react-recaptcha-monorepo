@@ -1,7 +1,7 @@
 {
   "name": "react-recaptcha-v2-web",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "React hook for invisible Google reCAPTCHA v2",
   "author": "614360117@qq.com",
   "license": "ISC",
