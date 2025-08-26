@@ -1,5 +1,11 @@
 # react-recaptcha-v2-web
 
+## 0.1.5
+
+### Patch Changes
+
+- 2ef17ac: add description
+
 ## 0.1.4
 
 ### Patch Changes
