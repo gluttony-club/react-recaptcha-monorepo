@@ -1,5 +1,5 @@
 {
-  "name": "react-recaptcha-v2-client",
+  "name": "@react-recaptcha/v2-client",
   "type": "module",
   "version": "0.1.1",
   "description": "",
