@@ -99,6 +99,9 @@ importers:
 
   packages/react-recaptcha-v2-web:
     dependencies:
+      '@types/react-google-recaptcha':
+        specifier: ^2.1.9
+        version: 2.1.9
       ahooks:
         specifier: ^3.9.4
         version: 3.9.4(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -112,9 +115,6 @@ importers:
       '@types/react-dom':
         specifier: ^19.1.7
         version: 19.1.7(@types/react@19.1.11)
-      '@types/react-google-recaptcha':
-        specifier: ^2.1.9
-        version: 2.1.9
       react:
         specifier: ^19.1.1
         version: 19.1.1
