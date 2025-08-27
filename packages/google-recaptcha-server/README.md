@@ -1,4 +1,4 @@
-## react-recaptcha-server
+## google-recaptcha-server
 
 Google reCAPTCHA 服务端校验工具。
 
@@ -14,7 +14,7 @@ Google reCAPTCHA 服务端校验工具。
 本包作为工作区内的独立包发布。
 
 ```bash
-pnpm add react-recaptcha-server
+pnpm add google-recaptcha-server
 ```
 
 对于 Node < 18：本包在需要时会动态加载 `node-fetch` 作为回退（已声明为可选依赖），通常无需你额外安装。
@@ -22,7 +22,7 @@ pnpm add react-recaptcha-server
 ### 使用
 
 ```ts
-import verifyRecaptcha from 'react-recaptcha-server'
+import verifyRecaptcha from 'google-recaptcha-server'
 
 // 仅需要布尔结果
 const ok = await verifyRecaptcha({
