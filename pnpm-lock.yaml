@@ -81,7 +81,7 @@ importers:
         specifier: 'catalog:'
         version: 2.1.9(@types/node@24.3.0)
 
-  packages/react-recaptcha-server:
+  packages/google-recaptcha-server:
     optionalDependencies:
       node-fetch:
         specifier: ^3.3.2
