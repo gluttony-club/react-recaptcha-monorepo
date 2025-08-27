@@ -1,5 +1,11 @@
 # react-recaptcha-v2-web
 
+## 1.0.2
+
+### Patch Changes
+
+- 628d7d9: fix web type
+
 ## 1.0.1
 
 ### Patch Changes
