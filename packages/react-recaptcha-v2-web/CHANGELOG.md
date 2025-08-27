@@ -1,5 +1,11 @@
 # react-recaptcha-v2-web
 
+## 1.0.1
+
+### Patch Changes
+
+- aa34051: add type
+
 ## 1.0.0
 
 ### Major Changes
