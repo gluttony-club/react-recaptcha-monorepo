@@ -1,5 +1,11 @@
 # react-recaptcha-v2-web
 
+## 1.0.0
+
+### Major Changes
+
+- 498e285: md log
+
 ## 0.1.5
 
 ### Patch Changes
