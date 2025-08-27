@@ -8,9 +8,9 @@ import type { ReCAPTCHAProps } from 'react-google-recaptcha'
 
 import { listenRecaptchaClose } from './helpers'
 
-import type { ReCaptchaLoaded } from './types'
+import type { ReCaptchaLoaded, UseRecaptchaResult } from './types'
 
-export function useRecaptcha(props: ReCAPTCHAProps) {
+export function useRecaptcha(props: ReCAPTCHAProps): UseRecaptchaResult {
   const { sitekey, asyncScriptOnLoad, ...reset } = props
 
   const reCaptchaRef = useRef<ReCAPTCHA>(null)
