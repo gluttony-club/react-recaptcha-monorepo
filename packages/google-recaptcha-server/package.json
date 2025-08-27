@@ -1,7 +1,7 @@
 {
   "name": "google-recaptcha-server",
   "type": "module",
-  "version": "2.0.0",
+  "version": "0.1.0",
   "description": "Server side verify for Google reCAPTCHA",
   "author": "614360117@qq.com",
   "license": "ISC",
