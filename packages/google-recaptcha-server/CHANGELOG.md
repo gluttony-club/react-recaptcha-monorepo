@@ -1,5 +1,11 @@
 # google-recaptcha-server
 
+## 1.1.1
+
+### Patch Changes
+
+- 086e59b: update README.md
+
 ## 1.1.0
 
 ### Minor Changes
