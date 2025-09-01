@@ -1,25 +1,36 @@
 import { DEFAULT_API_URL } from './data'
 import { getFetch } from './helpers'
 
+import type { VerifyRecaptchaResponse } from './types'
+
 interface VerifyRecaptchaProps {
-  token: string
-  secretKey: string
+  secret: string
+  response: string
 }
 
+// params and response: https://developers.google.com/recaptcha/docs/verify?hl=zh-cn
+/**
+ * @description Verify recaptcha, throw error if failed
+ * @param props {secret, response}
+ */
 export async function verifyRecaptcha(props: VerifyRecaptchaProps) {
-  const { token, secretKey } = props
+  const { response, secret } = props
 
-  if (!secretKey || !token) {
-    throw new Error('secretKey and token are required')
+  if (!secret) {
+    throw new Error('missing-input-secret')
+  }
+
+  if (!response) {
+    throw new Error('missing-input-response')
   }
 
   const formData = new URLSearchParams({
-    secret: secretKey,
-    response: token,
+    secret,
+    response,
   })
 
   const _fetch = await getFetch()
-  const response = await _fetch(DEFAULT_API_URL, {
+  const res = await _fetch(DEFAULT_API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -27,6 +38,9 @@ export async function verifyRecaptcha(props: VerifyRecaptchaProps) {
     body: formData,
   })
 
-  const result = await response.json() as { success: boolean }
-  return result.success
+  const data = await res.json() as VerifyRecaptchaResponse
+  if (!data?.success) {
+    const errorCode = data?.['error-codes']?.join(',') || 'bad-request'
+    throw new Error(errorCode)
+  }
 }
