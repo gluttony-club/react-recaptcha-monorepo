@@ -1,5 +1,11 @@
 # google-recaptcha-server
 
+## 1.1.0
+
+### Minor Changes
+
+- d8ccff9: verifyRecaptcha return void
+
 ## 1.0.0
 
 ### Major Changes
