@@ -22,25 +22,25 @@ pnpm add google-recaptcha-server
 ### 使用
 
 ```ts
-import verifyRecaptcha from 'google-recaptcha-server'
+import { verifyRecaptcha } from 'google-recaptcha-server'
 
-// 仅需要布尔结果
-const ok = await verifyRecaptcha({
-  token: '<client-token>',
-  secretKey: process.env.RECAPTCHA_SECRET!,
+// await 成功即代表校验通过；失败会抛出错误（错误码）
+await verifyRecaptcha({
+  response: '<client-token>',
+  secret: process.env.RECAPTCHA_SECRET!,
 })
 ```
 
 ### API
 
-#### 默认导出：`verifyRecaptcha(props)`
+#### 导出：`verifyRecaptcha(props)`
 
 参数：
 
-- `token: string` – reCAPTCHA 小部件返回的客户端 token
-- `secretKey: string` – 服务端密钥
+- `secret: string` – 服务端密钥
+- `response: string` – reCAPTCHA 小部件返回的客户端 token
 
-返回：`Promise<boolean>` – 是否校验成功。
+返回：`Promise<void>` – 成功 resolve；失败会抛出错误。错误信息可能为以下错误码之一：`missing-input-secret`、`invalid-input-secret`、`missing-input-response`、`invalid-input-response`、`bad-request`、`timeout-or-duplicate`。
 
 ### 运行时兼容
 
